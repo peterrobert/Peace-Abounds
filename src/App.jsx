@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import About from "./pages/about-page";
+import ContactPage from "./pages/contact-page";
 import GalleryPage from "./pages/gallery-page";
 import Home from "./pages/home-page";
 import ServicePage from "./pages/service-page";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route
           path="*"
           element={
