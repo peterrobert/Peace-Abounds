@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const CtaSection = () => {
   return (
     <section
@@ -21,18 +23,18 @@ const CtaSection = () => {
             family.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#"
+            <NavLink
+              to="/schedule"
               className="px-8 py-4 bg-white text-brand-sage rounded-full font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all w-full sm:w-auto"
             >
               Schedule a Private Tour
-            </a>
-            <a
-              href="#"
+            </NavLink>
+            <NavLink
+              to="/contact"
               className="px-8 py-4 bg-transparent border border-white/30 text-white rounded-full font-medium hover:bg-white/10 transition-all w-full sm:w-auto"
             >
               Contact Our Team
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
