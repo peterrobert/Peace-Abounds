@@ -1,3 +1,5 @@
+import kitchenImage from "../../assets/kitchenImage.jpeg";
+import toiletImage from "../../assets/toilet.jpeg";
 const HomeOverview = () => {
   return (
     <section
@@ -66,12 +68,12 @@ const HomeOverview = () => {
         <div className="w-full lg:w-1/2">
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64615c9f4c-136a394962f0ec4d3525.png"
+              src={kitchenImage}
               alt="Bright hallway"
               className="w-full h-[300px] object-cover rounded-[16px] shadow-sm"
             />
             <img
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64615c9f4c-136a394962f0ec4d3525.png"
+              src={toiletImage}
               alt="Cozy living room"
               className="w-full h-[300px] object-cover rounded-[16px] shadow-sm translate-y-8"
             />

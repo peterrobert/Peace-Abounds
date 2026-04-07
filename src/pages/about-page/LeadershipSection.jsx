@@ -1,3 +1,4 @@
+import creatorImage from "../../assets/creator.jpg";
 const LeadershipSection = () => {
   return (
     <section
@@ -17,28 +18,27 @@ const LeadershipSection = () => {
 
         <div className="max-w-4xl mx-auto bg-brand-cream/20 rounded-[24px] border border-brand-sage/20 p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center">
           <img
-            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg"
+            src={creatorImage}
             alt="Facility Director"
             className="w-48 h-48 rounded-full object-cover border-4 border-white shadow-md shrink-0"
           />
           <div>
             <div className="flex items-center gap-3 mb-2">
               <h3 className="font-serif text-2xl font-medium text-brand-text">
-                Sarah Jenkins
+                Maureen Ngigi
               </h3>
               <span className="px-3 py-1 bg-brand-sage/10 text-brand-sage rounded-full text-xs font-medium">
-                RN, BSN
+                MN
               </span>
             </div>
             <p className="text-brand-gold font-medium text-sm mb-4 uppercase tracking-wider">
               Facility Director & Founder
             </p>
             <p className="text-brand-muted font-light leading-relaxed mb-6">
-              "I founded Peace Abounds after struggling to find adequate care
-              for my own mother. I realized that clinical excellence wasn't
-              enough; the environment needed to feel like a true home. My
-              promise to every family is that we will care for your loved ones
-              with the exact same devotion I demanded for mine."
+              “At Peace Abounds, our purpose is to serve and support individuals
+              who need care and attention. We believe everyone deserves to feel
+              valued, respected, and at home, and we strive to bring that into
+              everything we do.”
             </p>
             <div className="flex items-center gap-4">
               <a
