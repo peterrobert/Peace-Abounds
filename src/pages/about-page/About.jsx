@@ -1,3 +1,4 @@
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import CtaSection from "./CtaSection";
 import HeroSection from "./HeroSection";
 import HomeOverview from "./HomeOverview";
@@ -20,6 +21,7 @@ const About = () => {
       <HomeOverview />
       <LeadershipSection />
       <CtaSection />
+      <ScrollToTopButton />
     </section>
   );
 };

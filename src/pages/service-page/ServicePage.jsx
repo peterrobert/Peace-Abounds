@@ -1,3 +1,4 @@
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import CoreServices from "./CoreServices";
 import CtaSection from "./CtaSection";
 import HeroSection from "./HeroSection";
@@ -18,6 +19,7 @@ const ServicePage = () => {
       <CoreServices />
       <WhatincludedSection />
       <CtaSection />
+      <ScrollToTopButton />
     </section>
   );
 };
