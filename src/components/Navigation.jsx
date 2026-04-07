@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navigation = () => {
   return (
     <header
@@ -11,48 +13,80 @@ const Navigation = () => {
             Peace Abounds
           </span>
         </a>
-
         {/* <!-- Desktop Nav --> */}
+
         <nav className="hidden md:flex items-center gap-8">
-          <a
-            href="#"
-            className="text-sm font-medium text-brand-muted hover:text-brand-sage transition-colors"
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-brand-sage border-b-2 border-brand-gold pb-1"
+                  : "text-brand-muted hover:text-brand-sage"
+              }`
+            }
           >
             Homepage
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-brand-sage border-b-2 border-brand-gold pb-1"
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-brand-sage border-b-2 border-brand-gold pb-1"
+                  : "text-brand-muted hover:text-brand-sage"
+              }`
+            }
           >
             About
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-brand-muted hover:text-brand-sage transition-colors"
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-brand-sage border-b-2 border-brand-gold pb-1"
+                  : "text-brand-muted hover:text-brand-sage"
+              }`
+            }
           >
             Services
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-brand-muted hover:text-brand-sage transition-colors"
+          </NavLink>
+
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-brand-sage border-b-2 border-brand-gold pb-1"
+                  : "text-brand-muted hover:text-brand-sage"
+              }`
+            }
           >
             Gallery
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-brand-muted hover:text-brand-sage transition-colors"
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `text-sm font-medium transition-colors ${
+                isActive
+                  ? "text-brand-sage border-b-2 border-brand-gold pb-1"
+                  : "text-brand-muted hover:text-brand-sage"
+              }`
+            }
           >
             Contact
-          </a>
+          </NavLink>
         </nav>
-
         <a
           href="#"
           className="hidden md:flex px-6 py-2.5 bg-brand-sage text-white rounded-full text-sm font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
           Schedule Visit
         </a>
-
         {/* <!-- Mobile Menu Button --> */}
         <button className="md:hidden text-brand-text text-2xl">
           <i className="fa-solid fa-bars"></i>

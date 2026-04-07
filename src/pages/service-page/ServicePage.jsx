@@ -1,12 +1,11 @@
+import CoreServices from "./CoreServices";
 import CtaSection from "./CtaSection";
 import HeroSection from "./HeroSection";
-import HomeOverview from "./HomeOverview";
-import LeadershipSection from "./LeadershipSection";
-import MissionSection from "./MissionSection";
+import WhatincludedSection from "./WhatincludedSection";
 
-const About = () => {
+const ServicePage = () => {
   return (
-    <section className="flex-grow flex flex-col relative" id="about_page">
+    <section className="flex-grow flex flex-col relative" id="service_page">
       {/* <!-- Background Pattern/Texture (Subtle) --> */}
       <div
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
@@ -16,12 +15,11 @@ const About = () => {
         }}
       ></div>
       <HeroSection />
-      <MissionSection />
-      <HomeOverview />
-      <LeadershipSection />
+      <CoreServices />
+      <WhatincludedSection />
       <CtaSection />
     </section>
   );
 };
 
-export default About;
+export default ServicePage;
