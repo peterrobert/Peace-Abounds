@@ -1,3 +1,5 @@
+import image1 from "../../assets/gallery/gateImage1.jpeg";
+
 const PhotogridSection = () => {
   return (
     <section
@@ -14,8 +16,8 @@ const PhotogridSection = () => {
           <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
             <img
               className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/50aea47c51-32614c659eb1c6e59f05.png"
-              alt="Warm, sunlit living room in an adult family home, comfortable armchairs, soft sage green and beige decor, peaceful atmosphere, high quality photography"
+              src={image1}
+              alt="Main entrance and living area of an adult family home, cozy seating, warm lighting, inviting atmosphere, high quality photography"
             />
             <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
               <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
@@ -23,7 +25,7 @@ const PhotogridSection = () => {
           </div>
           <div className="pt-4 pb-2 px-2">
             <p className="font-sans text-sm text-brand-muted font-light">
-              Main Living Area
+              Main Entrance & Living Area
             </p>
           </div>
         </div>
