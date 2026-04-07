@@ -1,3 +1,4 @@
+import mainImage from "../../assets/mainimage1.jpeg";
 const HeroSection = () => {
   return (
     <section
@@ -65,7 +66,7 @@ const HeroSection = () => {
         <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
           <img
             className="w-full h-full object-cover"
-            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64615c9f4c-136a394962f0ec4d3525.png"
+            src={mainImage}
             alt="Warm, well-lit, spacious living room in an adult family home. Soft natural light, neat and minimal decor, calming neutral tones with touches of sage green. High quality photography."
           />
 
