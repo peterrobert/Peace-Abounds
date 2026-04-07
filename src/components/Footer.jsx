@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer
@@ -28,41 +30,44 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/"
                   className="text-sm text-brand-muted hover:text-brand-sage transition-colors"
                 >
                   Homepage
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/about"
                   className="text-sm text-brand-muted hover:text-brand-sage transition-colors"
                 >
                   About Us
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/services"
                   className="text-sm text-brand-muted hover:text-brand-sage transition-colors"
                 >
                   Our Services
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="text-sm text-brand-sage font-medium">
+                <NavLink
+                  to="/gallery"
+                  className="text-sm text-brand-sage font-medium"
+                >
                   Gallery
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/contact"
                   className="text-sm text-brand-muted hover:text-brand-sage transition-colors"
                 >
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
