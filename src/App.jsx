@@ -5,6 +5,7 @@ import About from "./pages/about-page";
 import ContactPage from "./pages/contact-page";
 import GalleryPage from "./pages/gallery-page";
 import Home from "./pages/home-page";
+import SchedulePage from "./pages/schedule-page";
 import ServicePage from "./pages/service-page";
 // -----
 import { Routes, Route } from "react-router-dom";
@@ -20,6 +21,8 @@ function App() {
         <Route path="/services" element={<ServicePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+
         <Route
           path="*"
           element={
