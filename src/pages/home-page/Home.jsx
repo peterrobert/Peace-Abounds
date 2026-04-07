@@ -1,3 +1,4 @@
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import HeroSection from "./HeroSection";
 import SecondaryNavigationSection from "./SecondaryNavigationSection";
 
@@ -14,6 +15,8 @@ const Home = () => {
       ></div>
       <HeroSection />
       <SecondaryNavigationSection />
+
+      <ScrollToTopButton />
     </section>
   );
 };

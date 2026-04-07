@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import mainImage from "../../assets/mainimage1.jpeg";
 const HeroSection = () => {
   return (
@@ -43,20 +45,20 @@ const HeroSection = () => {
 
         {/* <!-- CTAs --> */}
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
-          <a
-            href="#gallery"
+          <NavLink
+            to="/gallery"
             className="group relative px-8 py-4 bg-brand-sage text-white rounded-full font-medium text-lg shadow-[0_8px_20px_-6px_rgba(157,181,168,0.6)] hover:shadow-[0_12px_25px_-6px_rgba(157,181,168,0.7)] transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden"
           >
             <span className="relative z-10">View Gallery</span>
             <i className="fa-solid fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
             <div className="absolute inset-0 bg-brand-muted opacity-0 group-hover:opacity-10 transition-opacity"></div>
-          </a>
-          <a
-            href="#contact"
+          </NavLink>
+          <NavLink
+            to="/contact"
             className="px-8 py-4 bg-white text-brand-text border border-brand-sage/30 rounded-full font-medium text-lg hover:bg-brand-sage/5 hover:border-brand-sage transition-all duration-300 flex items-center justify-center shadow-sm"
           >
             Contact Us
-          </a>
+          </NavLink>
         </div>
       </div>
 
