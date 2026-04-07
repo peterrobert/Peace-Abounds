@@ -76,14 +76,14 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-sm text-brand-muted">
                 <i className="fa-solid fa-location-dot mt-1 text-brand-sage"></i>
                 <span>
-                  123 Serenity Lane
+                  22003 50 Ave Ct E,
                   <br />
-                  Peaceful Valley, WA 98000
+                  Spanaway, WA 983875
                 </span>
               </li>
               <li className="flex items-center gap-3 text-sm text-brand-muted">
                 <i className="fa-solid fa-phone text-brand-sage"></i>
-                <span>(555) 123-4567</span>
+                <span>318-344-6503 | 206-460-9059</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-brand-muted">
                 <i className="fa-solid fa-envelope text-brand-sage"></i>
