@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const SecondaryNavigationSection = () => {
   return (
     <section
@@ -6,8 +8,9 @@ const SecondaryNavigationSection = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* <!-- Card 1 --> */}
-        <a
-          href="#about"
+        <NavLink
+          onClick={() => window.scrollTo(0, 0)}
+          to="/about"
           className="group bg-white rounded-[1.5rem] p-8 shadow-soft border border-brand-sage/10 hover:border-brand-sage/40 transition-all duration-300 flex flex-col items-center text-center gap-4 hover:-translate-y-1"
         >
           <div className="w-16 h-16 rounded-full bg-brand-cream flex items-center justify-center text-brand-sage group-hover:bg-brand-sage group-hover:text-white transition-colors">
@@ -20,11 +23,12 @@ const SecondaryNavigationSection = () => {
             Learn about our mission to provide dignified, compassionate care in
             a home setting.
           </p>
-        </a>
+        </NavLink>
 
         {/* <!-- Card 2 --> */}
-        <a
-          href="#services"
+        <NavLink
+          onClick={() => window.scrollTo(0, 0)}
+          to="/services"
           className="group bg-white rounded-[1.5rem] p-8 shadow-soft border border-brand-sage/10 hover:border-brand-sage/40 transition-all duration-300 flex flex-col items-center text-center gap-4 hover:-translate-y-1"
         >
           <div className="w-16 h-16 rounded-full bg-brand-cream flex items-center justify-center text-brand-sage group-hover:bg-brand-sage group-hover:text-white transition-colors">
@@ -37,11 +41,12 @@ const SecondaryNavigationSection = () => {
             Discover the personalized care plans and daily support we offer our
             residents.
           </p>
-        </a>
+        </NavLink>
 
         {/* <!-- Card 3 --> */}
-        <a
-          href="#schedule"
+        <NavLink
+          onClick={() => window.scrollTo(0, 0)}
+          to="/schedule"
           className="group bg-brand-sage rounded-[1.5rem] p-8 shadow-[0_10px_30px_-10px_rgba(157,181,168,0.5)] border border-transparent transition-all duration-300 flex flex-col items-center text-center gap-4 hover:-translate-y-1"
         >
           <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center text-white">
@@ -54,7 +59,7 @@ const SecondaryNavigationSection = () => {
             Come see our peaceful home in person and meet our dedicated care
             team.
           </p>
-        </a>
+        </NavLink>
       </div>
     </section>
   );
