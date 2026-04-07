@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-brand-sage/10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-sm text-brand-muted text-center md:text-left">
-            &copy; 2024 Peace Abounds Adult Family Home. All rights reserved.
+            &copy; 2026 Peace Abounds Adult Family Home. All rights reserved.
           </div>
           <div className="flex gap-4">
             <a
