@@ -1,3 +1,4 @@
+import mainImage2 from "../../assets/mainimage2.jpeg";
 const HeroSection = () => {
   return (
     <section
@@ -26,7 +27,7 @@ const HeroSection = () => {
         <div className="w-full lg:w-1/2 relative">
           <div className="absolute inset-0 bg-brand-sage/10 rounded-[24px] translate-x-4 translate-y-4"></div>
           <img
-            src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64615c9f4c-136a394962f0ec4d3525.png"
+            src={mainImage2}
             alt="Caregiver holding hands with resident"
             className="w-full h-[500px] object-cover rounded-[24px] relative z-10 shadow-lg border border-brand-sage/20"
           />
