@@ -3,43 +3,47 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import image1 from "../../assets/gallery/gateImage1.jpeg";
+import image2 from "../../assets/gallery/bathroom3.jpeg";
+import image3 from "../../assets/mainimagepage.png";
+import image4 from "../../assets/gallery/outside.png";
+import image5 from "../../assets/aboutmainimage.png";
+import image6 from "../../assets/gallery/bathroom.jpeg";
+import image7 from "../../assets/gallery/kitchen1.jpeg";
+import image8 from "../../assets/gallery/tvarea.jpeg";
 
 const images = [
   {
     src: image1,
+    title: "Exterior View of Main Entrance",
+  },
+  {
+    src: image2,
+    title: "Second Bathroom with Walk-in Shower",
+  },
+  {
+    src: image3,
     title: "Main Entrance & Living Area",
   },
   {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/57fc136093-2e3db1a79e2f2d39707b.png",
-    title: "Private Resident Suite",
+    src: image4,
+    title: "Outdoor Garden",
   },
   {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/652f5f284a-0c74552f465cb3e855fd.png",
-    title: "Communal Dining Room",
-  },
-  {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/d27641934c-9ec03c96864d960eeb20.png",
+    src: image5,
     title: "Outdoor Garden Patio",
   },
   {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/08eccb1c3d-91061be5dc24b706b67e.png",
+    src: image6,
     title: "Accessible Bathroom",
   },
   {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/40c65d09b5-da31ff8f56e53d2e3aca.png",
-    title: "Reading Corner",
+    src: image7,
+    title: "Kitchen Area",
   },
+
   {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/290d55fa37-f4b6534ec32cd94538a5.png",
-    title: "Activity Space",
-  },
-  {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/80e685076f-1623e92d43c3aa8e1591.png",
-    title: "Safe Corridors",
-  },
-  {
-    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/00c3c3db95-7934f0283ebcf8b47015.png",
-    title: "Exterior View",
+    src: image8,
+    title: "Tv Room",
   },
 ];
 
