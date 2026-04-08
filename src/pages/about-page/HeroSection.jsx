@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import mainImage2 from "../../assets/mainimage2.jpeg";
+import mainImage2 from "../../assets/aboutmainimage.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
