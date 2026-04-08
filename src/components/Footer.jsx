@@ -16,7 +16,7 @@ const item = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 1, ease: "easeOut" },
   },
 };
 
@@ -108,7 +108,7 @@ const Footer = () => {
 
               <li className="flex items-center gap-3 text-sm text-brand-muted">
                 <i className="fa-solid fa-envelope text-brand-sage"></i>
-                <span>care@peaceabounds.com</span>
+                <span>shirogee98@gmail.com</span>
               </li>
             </ul>
           </motion.div>
