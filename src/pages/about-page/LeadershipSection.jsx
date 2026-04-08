@@ -96,7 +96,7 @@ const LeadershipSection = () => {
 
             <motion.div variants={item} className="flex items-center gap-4">
               <motion.a
-                href="#"
+                href="mailto:shirogee98@gmail.com"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="text-brand-sage hover:text-brand-gold transition-colors"
