@@ -1,136 +1,185 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const leftItem = {
+  hidden: { opacity: 0, x: -20 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.35,
+      ease: "easeOut",
+    },
+  },
+};
+
+const rightItem = {
+  hidden: { opacity: 0, x: 20 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.35,
+      ease: "easeOut",
+    },
+  },
+};
+
 const WhatincludedSection = () => {
   return (
     <section
       id="included-amenities"
       className="relative z-10 w-full max-w-[1440px] mx-auto px-6 py-24"
     >
-      <div className="flex flex-col lg:flex-row gap-16 items-start">
-        <div className="w-full lg:w-1/3">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col lg:flex-row gap-16 items-start"
+      >
+        {/* LEFT SIDE */}
+        <motion.div variants={leftItem} className="w-full lg:w-1/3">
           <h2 className="font-serif text-4xl font-medium text-brand-text mb-6">
             All-Inclusive Living
           </h2>
+
           <p className="font-sans text-lg text-brand-muted font-light leading-relaxed mb-8">
             We believe in transparent, straightforward care. Our monthly rate
-            covers all essential services, amenities, and support, eliminating
-            the stress of hidden fees.
+            covers all essential services, amenities, and support.
           </p>
-          <img
+
+          <motion.img
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
             src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64615c9f4c-136a394962f0ec4d3525.png"
             alt="Peaceful room setting"
             className="w-full h-64 object-cover rounded-[16px] shadow-sm border border-brand-sage/20"
           />
-        </div>
+        </motion.div>
 
-        <div className="w-full lg:w-2/3">
-          <div className="bg-white rounded-[24px] border border-brand-sage/20 shadow-card p-8 md:p-12">
+        {/* RIGHT SIDE */}
+        <motion.div variants={rightItem} className="w-full lg:w-2/3">
+          <motion.div
+            whileHover={{ y: -4 }}
+            transition={{ type: "tween", duration: 0.15 }}
+            className="bg-white rounded-[24px] border border-brand-sage/20 shadow-card p-8 md:p-12"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-              {/* <!-- Amenity Group --> */}
               <div>
                 <h4 className="font-serif text-xl font-medium text-brand-text mb-4 flex items-center gap-2">
-                  <i className="fa-solid fa-house-chimney text-brand-sage"></i>{" "}
+                  <i className="fa-solid fa-house-chimney text-brand-sage"></i>
                   Room & Board
                 </h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
                     Private or semi-private furnished rooms
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    All utilities (electricity, water, heating/AC)
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Utilities included
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Cable TV and high-speed Wi-Fi
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Wi-Fi & TV access
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Maintenance of building and grounds
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Maintenance services
                   </li>
                 </ul>
               </div>
 
-              {/* <!-- Amenity Group --> */}
               <div>
                 <h4 className="font-serif text-xl font-medium text-brand-text mb-4 flex items-center gap-2">
-                  <i className="fa-solid fa-user-nurse text-brand-sage"></i>{" "}
+                  <i className="fa-solid fa-user-nurse text-brand-sage"></i>
                   Health & Safety
                 </h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    24/7 awake staff supervision
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    24/7 supervision
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Emergency call system in rooms/bathrooms
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Emergency systems
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Routine health and wellness assessments
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Health monitoring
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Coordination with home health/hospice
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Care coordination
                   </li>
                 </ul>
               </div>
 
-              {/* <!-- Amenity Group --> */}
               <div>
                 <h4 className="font-serif text-xl font-medium text-brand-text mb-4 flex items-center gap-2">
-                  <i className="fa-solid fa-mug-hot text-brand-sage"></i> Daily
-                  Life
+                  <i className="fa-solid fa-mug-hot text-brand-sage"></i>
+                  Daily Life
                 </h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    3 home-cooked meals + unlimited snacks
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Meals & snacks
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Daily housekeeping and trash removal
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Housekeeping
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Personal laundry and linen service
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Laundry service
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Access to all common areas and gardens
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Shared spaces
                   </li>
                 </ul>
               </div>
 
-              {/* <!-- Amenity Group --> */}
               <div>
                 <h4 className="font-serif text-xl font-medium text-brand-text mb-4 flex items-center gap-2">
-                  <i className="fa-solid fa-puzzle-piece text-brand-sage"></i>{" "}
+                  <i className="fa-solid fa-puzzle-piece text-brand-sage"></i>
                   Enrichment
                 </h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Scheduled group activities and games
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Activities & games
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Holiday celebrations and birthday parties
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Events & celebrations
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Visiting entertainers and therapy pets
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Entertainment visits
                   </li>
                   <li className="flex items-center gap-3 text-brand-muted font-light">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold"></div>{" "}
-                    Spiritual support and religious services
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold"></span>
+                    Spiritual support
                   </li>
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

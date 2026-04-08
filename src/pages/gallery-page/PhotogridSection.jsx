@@ -1,211 +1,160 @@
+import { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from "framer-motion";
+
 import image1 from "../../assets/gallery/gateImage1.jpeg";
 
+const images = [
+  {
+    src: image1,
+    title: "Main Entrance & Living Area",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/57fc136093-2e3db1a79e2f2d39707b.png",
+    title: "Private Resident Suite",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/652f5f284a-0c74552f465cb3e855fd.png",
+    title: "Communal Dining Room",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/d27641934c-9ec03c96864d960eeb20.png",
+    title: "Outdoor Garden Patio",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/08eccb1c3d-91061be5dc24b706b67e.png",
+    title: "Accessible Bathroom",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/40c65d09b5-da31ff8f56e53d2e3aca.png",
+    title: "Reading Corner",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/290d55fa37-f4b6534ec32cd94538a5.png",
+    title: "Activity Space",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/80e685076f-1623e92d43c3aa8e1591.png",
+    title: "Safe Corridors",
+  },
+  {
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/00c3c3db95-7934f0283ebcf8b47015.png",
+    title: "Exterior View",
+  },
+];
+
 const PhotogridSection = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const open = (i) => setActiveIndex(i);
+  const close = () => setActiveIndex(null);
+
+  const next = () => setActiveIndex((prev) => (prev + 1) % images.length);
+
+  const prev = () =>
+    setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (activeIndex === null) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [activeIndex]);
+
   return (
-    <section
-      id="photo-grid-masonry"
-      className="relative z-10 w-full max-w-[1440px] mx-auto px-8 md:px-12 lg:px-20 pb-32"
-    >
-      {/* <!-- Grid Container with generous spacing --> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        {/* <!-- Gallery Item 1 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(0)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src={image1}
-              alt="Main entrance and living area of an adult family home, cozy seating, warm lighting, inviting atmosphere, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Main Entrance & Living Area
-            </p>
-          </div>
-        </div>
+    <section className="w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-24">
+      {/* Masonry Grid */}
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+        {images.map((img, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.05 }}
+            className="break-inside-avoid mb-8 group cursor-pointer"
+            onClick={() => open(i)}
+          >
+            <div className="relative overflow-hidden rounded-2xl bg-white shadow-md">
+              <img
+                src={img.src}
+                alt={img.title}
+                className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-        {/* <!-- Gallery Item 2 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(1)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[3/4] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/57fc136093-2e3db1a79e2f2d39707b.png"
-              alt="Cozy private bedroom in an adult family home, neatly made bed, floral accents, natural light from window, serene and dignified, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
+              {/* overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition">
+                  <i className="fa-solid fa-expand text-white text-2xl" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Private Resident Suite
-            </p>
-          </div>
-        </div>
 
-        {/* <!-- Gallery Item 3 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(2)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/652f5f284a-0c74552f465cb3e855fd.png"
-              alt="Spacious, clean dining area in an adult family home, wooden table set for meal, warm lighting, inviting and communal, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Communal Dining Room
+            {/* caption */}
+            <p className="mt-3 text-sm text-gray-500 font-light px-1">
+              {img.title}
             </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 4 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(3)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[3/4] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d27641934c-9ec03c96864d960eeb20.png"
-              alt="Peaceful outdoor garden patio at an adult family home, comfortable seating, potted plants, sunny day, relaxing environment, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Outdoor Garden Patio
-            </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 5 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(4)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/08eccb1c3d-91061be5dc24b706b67e.png"
-              alt="Accessible modern bathroom in an adult family home, grab bars, walk in shower, clean and safe, neutral tones, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Accessible En-suite Bathroom
-            </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 6 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(5)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/40c65d09b5-da31ff8f56e53d2e3aca.png"
-              alt="Quiet reading corner in an adult family home, comfortable chair, small bookshelf, soft lighting, relaxing space, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Quiet Reading Corner
-            </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 7 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(6)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/290d55fa37-f4b6534ec32cd94538a5.png"
-              alt="Activity room in adult family home, puzzles on table, crafting supplies, bright and engaging, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Engaging Activity Space
-            </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 8 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(7)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[3/4] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/80e685076f-1623e92d43c3aa8e1591.png"
-              alt="Warmly lit hallway in adult family home, handrails on walls, clean carpet, safe environment, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Safe, Accessible Corridors
-            </p>
-          </div>
-        </div>
-
-        {/* <!-- Gallery Item 9 --> */}
-        <div
-          className="gallery-item group cursor-pointer rounded-[6px] border border-brand-sage/30 bg-white p-2 shadow-sm"
-          onclick="openLightbox(8)"
-        >
-          <div className="overflow-hidden rounded-[4px] aspect-[4/3] relative">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/00c3c3db95-7934f0283ebcf8b47015.png"
-              alt="Front exterior of a beautiful, welcoming adult family home, landscaped yard, inviting porch, peaceful neighborhood, high quality photography"
-            />
-            <div className="absolute inset-0 bg-brand-text/0 group-hover:bg-brand-text/10 transition-colors duration-300 flex items-center justify-center">
-              <i className="fa-solid fa-expand text-white opacity-0 group-hover:opacity-100 text-2xl transition-opacity duration-300 drop-shadow-md"></i>
-            </div>
-          </div>
-          <div className="pt-4 pb-2 px-2">
-            <p className="font-sans text-sm text-brand-muted font-light">
-              Welcoming Exterior
-            </p>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
+
+      {/* LIGHTBOX */}
+      <AnimatePresence>
+        {activeIndex !== null && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* close */}
+            <button
+              onClick={close}
+              className="absolute top-6 right-6 text-white text-xl"
+            >
+              ✕
+            </button>
+
+            {/* prev */}
+            <button
+              onClick={prev}
+              className="absolute left-6 text-white text-3xl"
+            >
+              ‹
+            </button>
+
+            {/* image */}
+            <motion.img
+              key={activeIndex}
+              src={images[activeIndex].src}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl"
+            />
+
+            {/* next */}
+            <button
+              onClick={next}
+              className="absolute right-6 text-white text-3xl"
+            >
+              ›
+            </button>
+
+            {/* caption */}
+            <div className="absolute bottom-6 text-white text-sm font-light">
+              {images[activeIndex].title}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
