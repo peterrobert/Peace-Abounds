@@ -82,7 +82,7 @@ const CtaSection = () => {
           >
             <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }}>
               <NavLink
-                to="/schedule"
+                to="/contact"
                 className="px-8 py-4 bg-white text-brand-sage rounded-full font-medium shadow-md hover:shadow-lg transition-all w-full sm:w-auto"
               >
                 Schedule a Private Tour

@@ -71,7 +71,7 @@ const CtaSection = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <NavLink
-                to="/schedule"
+                to="/contact"
                 className="px-8 py-4 bg-white text-brand-sage rounded-full font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all w-full sm:w-auto"
               >
                 Schedule a Visit
