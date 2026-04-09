@@ -1,3 +1,5 @@
+import image1 from "../../assets/mainimagepage.png";
+
 const MapSection = () => {
   return (
     // <!-- Right Column: Contact Details & Map Card -->
@@ -9,7 +11,7 @@ const MapSection = () => {
           <div className="h-48 w-full relative overflow-hidden bg-brand-cream">
             <img
               className="w-full h-full object-cover"
-              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e32ed1c5b-11a769e82b81493915a9.png"
+              src={image1}
               alt="Warm, inviting front porch of a peaceful adult family home, soft sunlight, potted plants, serene architectural photography, sage green door"
             />
           </div>
@@ -36,9 +38,9 @@ const MapSection = () => {
                 <div>
                   <p className="text-sm font-medium text-brand-text">Address</p>
                   <p className="text-sm text-brand-muted mt-0.5">
-                    123 Serenity Lane
+                    22003 50 Ave Ct E,
                     <br />
-                    Seattle, WA 98101
+                    Spanaway, WA 983875
                   </p>
                 </div>
               </div>
@@ -50,7 +52,7 @@ const MapSection = () => {
                 <div>
                   <p className="text-sm font-medium text-brand-text">Phone</p>
                   <p className="text-sm text-brand-sage font-medium mt-0.5">
-                    (555) 987-6543
+                    318-344-6503 | 206-460-9059
                   </p>
                 </div>
               </div>
@@ -62,7 +64,7 @@ const MapSection = () => {
                 <div>
                   <p className="text-sm font-medium text-brand-text">Email</p>
                   <p className="text-sm text-brand-sage font-medium mt-0.5">
-                    care@peaceabounds.com
+                    shirogee98@gmail.com
                   </p>
                 </div>
               </div>
@@ -80,16 +82,15 @@ const MapSection = () => {
         {/* <!-- Map Card --> */}
         <div className="bg-white rounded-[12px] shadow-card border border-brand-sage/20 p-2 overflow-hidden">
           <div className="w-full h-64 bg-brand-cream rounded-[8px] overflow-hidden relative flex items-center justify-center border border-brand-sage/10">
-            {/* <!-- Placeholder for actual embedded map --> */}
-            <div className="absolute inset-0 opacity-40 bg-[url('https://storage.googleapis.com/uxpilot-auth.appspot.com/default-placeholder.png')] bg-cover bg-center mix-blend-multiply"></div>
-            <div className="relative z-10 flex flex-col items-center text-center p-4">
-              <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center mb-3">
-                <i className="fa-solid fa-map-pin text-brand-sage text-xl"></i>
-              </div>
-              <span className="text-sm font-medium text-brand-text bg-white/80 px-3 py-1 rounded-full backdrop-blur-sm">
-                Interactive Map
-              </span>
-            </div>
+            <iframe
+              title="Location Map"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              className="w-full h-full"
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=22003%2050%20Ave%20Ct%20E,%20Spanaway,%20WA%2098387&output=embed"
+            ></iframe>
           </div>
         </div>
       </div>
