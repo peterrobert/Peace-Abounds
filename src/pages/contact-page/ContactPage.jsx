@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
 import MapSection from "./MapSection";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const ContactPage = () => {
   return (
