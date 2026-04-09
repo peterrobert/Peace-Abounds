@@ -1,7 +1,7 @@
 const MapSection = () => {
   return (
     // <!-- Right Column: Contact Details & Map Card -->
-    <div className="w-full lg:w-1/3">
+    <div className="w-full lg:w-1/2">
       <div className="sticky top-32 space-y-8">
         {/* <!-- Contact Info Card (Reference Style) --> */}
         <div className="bg-white rounded-[12px] shadow-card border border-brand-sage/20 overflow-hidden">
