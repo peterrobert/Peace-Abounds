@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import HeroPage from "./HeroPage";
 import PhotogridSection from "./PhotogridSection";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -38,6 +39,15 @@ const GalleryPage = () => {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <PhotogridSection />
+      </motion.div>
+
+      <motion.div
+        className="fixed bottom-6 right-6 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.6, duration: 0.4 }}
+      >
+        <ScrollToTopButton />
       </motion.div>
     </section>
   );

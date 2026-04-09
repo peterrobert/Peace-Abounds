@@ -45,7 +45,7 @@ Message:
 ${formData.message}
       `;
 
-      const mailtoLink = `mailto:pwambui93@gmail.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:shirogee98@gmail.com?subject=${encodeURIComponent(
         subject,
       )}&body=${encodeURIComponent(body)}`;
 
