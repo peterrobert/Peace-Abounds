@@ -91,7 +91,7 @@ const Navigation = () => {
           </NavLink>
         </nav>
         <NavLink
-          to="/schedule"
+          to="/contact"
           className="hidden md:flex px-6 py-2.5 bg-brand-sage text-white rounded-full text-sm font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
         >
           Schedule Visit
