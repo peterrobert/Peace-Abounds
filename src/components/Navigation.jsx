@@ -142,7 +142,7 @@ const Navigation = () => {
               </NavLink>
 
               <NavLink
-                to="/schedule"
+                to="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 px-5 py-3 bg-brand-sage text-white rounded-full text-sm font-medium text-center shadow"
               >
