@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import mainImage from "../../assets/mainimagepage.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -118,8 +117,9 @@ const HeroSection = () => {
       >
         <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
           <motion.img
-            className="w-full h-full object-cover"
-            src={mainImage}
+            className="w-full h-full object-cover blur-up"
+            src="/images/mainimagepage.jpg"
+            loading="lazy"
             alt="Care home"
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
