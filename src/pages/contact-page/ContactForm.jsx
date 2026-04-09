@@ -21,10 +21,10 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // basic validation
+    // validation
     if (!formData.firstName || !formData.email || !formData.message) {
       alert("Please fill all required fields.");
       return;
@@ -33,16 +33,26 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://formspree.io/f/xnjoyppn", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const subject = "New Inquiry - Peace Abounds";
 
-      if (res.ok) {
+      const body = `
+First Name: ${formData.firstName}
+Last Name: ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+      `;
+
+      const mailtoLink = `mailto:pwambui93@gmail.com.com?subject=${encodeURIComponent(
+        subject,
+      )}&body=${encodeURIComponent(body)}`;
+
+      // simulate slight UX delay for polish
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+
         setSubmitted(true);
         setFormData({
           firstName: "",
@@ -52,16 +62,15 @@ const ContactForm = () => {
           message: "",
         });
 
+        setLoading(false);
+
         setTimeout(() => setSubmitted(false), 3000);
-      } else {
-        alert("Something went wrong. Try again.");
-      }
+      }, 500);
       // eslint-disable-next-line no-unused-vars
     } catch (err) {
-      alert("Network error. Try again.");
+      alert("Something went wrong.");
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -154,7 +163,7 @@ const ContactForm = () => {
                 {loading ? (
                   <>
                     <i className="fa-solid fa-spinner fa-spin"></i>
-                    Sending...
+                    Opening email...
                   </>
                 ) : (
                   <>
@@ -181,7 +190,7 @@ const ContactForm = () => {
                 <i className="fa-solid fa-check text-brand-sage text-2xl"></i>
               </div>
               <p className="text-brand-text font-medium text-lg">
-                Message sent successfully
+                Email ready to send
               </p>
             </motion.div>
           )}
