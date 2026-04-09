@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import mainImage2 from "../../assets/aboutmainimage.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -77,9 +76,10 @@ const HeroSection = () => {
 
           {/* Image */}
           <motion.img
-            src={mainImage2}
+            src="/images/aboutmainimage.jpg"
+            loading="lazy"
             alt="Caregiver holding hands with resident"
-            className="w-full h-[500px] object-cover rounded-[24px] relative z-10 shadow-lg border border-brand-sage/20"
+            className="w-full h-[500px] object-cover rounded-[24px] relative z-10 shadow-lg border border-brand-sage/20 blur-up"
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
