@@ -92,7 +92,7 @@ const SecondaryNavigationSection = () => {
           <motion.div whileHover={{ y: -6, scale: 1.02 }}>
             <NavLink
               onClick={() => window.scrollTo(0, 0)}
-              to="/schedule"
+              to="/contact"
               className="group bg-brand-sage rounded-[1.5rem] p-8 shadow-[0_10px_30px_-10px_rgba(157,181,168,0.5)] border border-transparent transition-all duration-300 flex flex-col items-center text-center gap-4"
             >
               <motion.div
